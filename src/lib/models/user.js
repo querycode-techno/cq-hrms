@@ -101,10 +101,6 @@ userSchema.virtual('fullName').get(function() {
   return parts.join(' ');
 });
 
-// Indexes for better query performance
-userSchema.index({ personalEmail: 1 });
-userSchema.index({ employeeId: 1 });
-    
 // Pre-save middleware to generate employee ID
 userSchema.pre('save', async function(next) {
   if (this.isNew && !this.employeeId) {

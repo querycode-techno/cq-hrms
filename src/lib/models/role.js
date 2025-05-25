@@ -31,7 +31,6 @@ const roleSchema = new Schema({
 });
 
 // Indexes
-roleSchema.index({ name: 1 });
 roleSchema.index({ isSystemRole: 1 });
 
 // Virtual for permission count
