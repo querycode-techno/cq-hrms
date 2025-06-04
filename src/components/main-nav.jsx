@@ -17,6 +17,8 @@ import {
   Bell,
   Settings,
   Palette,
+  MessageCircle,
+  CalendarDays,
 } from "lucide-react"
 
 const allRoutes = [
@@ -25,6 +27,20 @@ const allRoutes = [
     icon: LayoutDashboard,
     href: "/dashboard",
     color: "text-sky-500",
+    alwaysShow: true
+  },
+  {
+    label: "Chat",
+    icon: MessageCircle,
+    href: "/chat",
+    color: "text-blue-500",
+    alwaysShow: true
+  },
+  {
+    label: "Events",
+    icon: CalendarDays,
+    href: "/events",
+    color: "text-indigo-500",
     alwaysShow: true
   },
   {

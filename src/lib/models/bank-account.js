@@ -49,6 +49,12 @@ const bankAccountSchema = new mongoose.Schema({
     default: 'Savings'
   },
   
+  // Primary Account Flag
+  isPrimary: {
+    type: Boolean,
+    default: false
+  },
+  
   // Metadata
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
@@ -60,7 +66,8 @@ const bankAccountSchema = new mongoose.Schema({
     ref: 'User'
   }
 }, {
-  timestamps: true
+  timestamps: true,
+  suppressReservedKeysWarning: true
 });
 
 // Indexes

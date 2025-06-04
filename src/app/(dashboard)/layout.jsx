@@ -1,7 +1,7 @@
 "use client"
 
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import { MainNav } from "@/components/main-nav"
 import { UserNav } from "@/components/user-nav"
@@ -11,6 +11,10 @@ import { Loader2 } from 'lucide-react';
 export default function DashboardLayout({ children }) {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const pathname = usePathname();
+
+  // Check if current page is chat
+  const isChatPage = pathname === '/chat';
 
   useEffect(() => {
     // Redirect to login if not authenticated
@@ -79,11 +83,15 @@ export default function DashboardLayout({ children }) {
 
           {/* Page content */}
           <main className="flex-1">
-            <div className="py-6">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                {children}
+            {isChatPage ? (
+              children
+            ) : (
+              <div className="py-6">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                  {children}
+                </div>
               </div>
-            </div>
+            )}
           </main>
         </div>
       </div>

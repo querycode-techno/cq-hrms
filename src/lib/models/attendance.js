@@ -135,7 +135,6 @@ attendanceSchema.index({ employeeId: 1, date: 1 }, { unique: true }); // One rec
 attendanceSchema.index({ date: 1 });
 attendanceSchema.index({ status: 1 });
 attendanceSchema.index({ location: 1 });
-attendanceSchema.index({ employeeId: 1, date: -1 }); // For recent attendance queries
 
 // Pre-save middleware to calculate total hours
 attendanceSchema.pre('save', function (next) {
