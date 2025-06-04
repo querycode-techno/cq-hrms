@@ -19,6 +19,7 @@ import {
   Palette,
   MessageCircle,
   CalendarDays,
+  Clipboard,
 } from "lucide-react"
 
 const allRoutes = [
@@ -41,6 +42,13 @@ const allRoutes = [
     icon: CalendarDays,
     href: "/events",
     color: "text-indigo-500",
+    alwaysShow: true
+  },
+  {
+    label: "Notice Board",
+    icon: Clipboard,
+    href: "/notices",
+    color: "text-amber-500",
     alwaysShow: true
   },
   {
