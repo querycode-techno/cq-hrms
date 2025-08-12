@@ -1,5 +1,5 @@
 "use client"
-
+// Main Nav Component
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
